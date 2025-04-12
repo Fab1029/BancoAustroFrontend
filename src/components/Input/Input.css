@@ -1,0 +1,16 @@
+.svg-enter {
+    right: 0.8rem;
+    width: 40px;
+    bottom: -2.5rem;
+    cursor: pointer;
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+}
+
+.svg-enter:hover {
+    transform: translateX(10%);
+}
+
+.general-input {
+    scrollbar-width: auto;
+}

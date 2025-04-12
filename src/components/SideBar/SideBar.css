@@ -1,0 +1,100 @@
+.side-bar-container {
+    width: 300px;
+    position: relative;
+}
+
+.slide-container, .side-bar-icons-container {
+    width: 100%;
+    padding: 3% 2%;
+}
+
+.side-bar-icons-container, .side-bar-buttons-container {
+    list-style: none;
+}
+
+.side-bar-icons-container {
+    gap: 8%;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.tool-tip {
+    bottom: 1%;
+    opacity: 0;
+    color: white;
+    padding: 1% 2%;
+    font-size: small;
+    border-radius: 3px;
+    position: absolute;
+    transition: opacity 0.5s ease-in-out;
+    background-color: rgba(66, 66, 66, 0.5);
+}
+
+.side-bar-icons-container li:hover {
+    .tool-tip {
+        opacity: 1;
+    }
+}
+
+
+
+.side-bar-buttons-container {
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.svg-menu {
+    width: 50px;
+    cursor: pointer;
+    animation: appear 0.5s ease-in-out;
+}
+
+.svg-new-chat {
+    width: 55px;
+    cursor: pointer;
+    animation: appear 0.5s ease-in-out;
+}
+
+.svg-menu path, .svg-new-chat path {
+    transition: stroke 0.3s ease-in-out;
+}
+
+.svg-menu:hover path, .svg-new-chat:hover path {
+    stroke: #091b698f;
+}
+
+.slide-container {
+    top: 0%;
+    left: -100%;
+    height: 100vh;
+    position: absolute;
+    background-color: white;
+    transition: left 0.3s ease-in-out;
+}
+
+.slide-container.show {
+    left: 0%;
+
+    .side-bar-icons-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.button {
+    padding: 6% 5%;
+    color: black;
+    cursor: pointer;
+    font-size: x-large;
+    border-radius: 25px;
+    background-color: white;
+    transition: background-color 0.4s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button.active {
+    color: white;
+    background-color: #091B69;
+}

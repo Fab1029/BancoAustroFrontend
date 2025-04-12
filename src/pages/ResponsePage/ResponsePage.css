@@ -1,0 +1,52 @@
+.main-response-page {
+    height: 850px;
+    display: flex;
+    overflow-y: auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    scrollbar-width: none;
+}
+
+.responses-container {
+    gap: 30px;
+    width: 60%;
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+}
+
+.promt-container {
+    align-self: self-start
+}
+
+.response-container {
+    align-self: self-end;
+}
+
+.footer-response-page {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-container-response {
+    width: 70%;
+    margin-top: 3%;
+    max-height: 200px;
+    position: relative;
+    border-radius: 50px;
+    padding: 1% 3% 2.5rem 3%;
+    background-color: white;
+    border: 3px solid #8C94BC;
+    animation: appear 0.5s ease-in-out;
+}
+
+.input-response {
+    width: 100%;
+    border: none;
+    resize: none;
+    max-height: 100px;
+    font-size: x-large; 
+}
