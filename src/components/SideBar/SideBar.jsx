@@ -3,21 +3,24 @@ import './SideBar.css'
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const SideBar = () => {
-  // Inicializar
+  // Inicializar valores
   const navigate = useNavigate();
   const location = useLocation();
+  // Opciones disponibles del modelo
   const options = ['Response', 'Embedding'];
 
   // Referencias useState
   const [menu, setMenu] = useState(false);
   const [option, setOption] = useState(Number(localStorage.getItem('option')));
 
+  // Función para determinar estado de menu
+  // desplegable
   const handleMenu = () => {
     setMenu(!menu);
   };
 
   const handleOption = (index) => {
-    // Determinar el cambio de estado 
+    // Determinar el cambio de estado en opciones
     if(index !== option) {
       if (location.pathname === '/response') navigate('/');
       // Actualizar estado global
@@ -26,6 +29,8 @@ const SideBar = () => {
     }
   };
   
+  // Siempre al generar un nuevo chat
+  // redireccionar a la página principal
   const handleNewChatOption = () => {  
     navigate('/');
   };
@@ -57,7 +62,7 @@ const SideBar = () => {
           </ul>
         
           <ul className='side-bar-buttons-container'>
-            {
+            { // Generar opciones 
               options.map((optionName, index) => (
                 <li key={index} onClick={() => handleOption(index)} className={`button ${index === option ? 'active' : ''}`}>
                   {optionName}

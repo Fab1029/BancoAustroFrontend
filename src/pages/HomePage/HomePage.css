@@ -28,5 +28,33 @@
     border: none;
     resize: none;
     max-height: 300px;
-    font-size: x-large; 
+    font-size: medium; 
+}
+
+
+@media (max-width:600px) {
+    .main-home-page {
+        margin-top: 35%;
+    }
+    .banner-banco-austro {
+        width: 80%;
+    }
+    .input-container {
+        width: 90%;
+        padding: 3% 3% 3.5rem 3%;
+    }
+}
+
+@media (min-width:601px) and (max-width:1024px) {
+    .main-home-page {
+        margin-top: 20%;
+    }
+    .banner-banco-austro {
+        width: 80%;
+    }
+    .input-container {
+        width: 90%;
+        padding: 3% 2% 3.5rem 2%;
+    }
+    
 }

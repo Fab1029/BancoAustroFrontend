@@ -2,8 +2,11 @@ import React, { useRef } from 'react';
 import './Input.css';
 
 const Input = ({ inputNameContainer, inputName, placeholder, action}) => {
+    // Referencia al text area
     const textareaRef = useRef(null);
     
+    // Función necesaria para poder hacer responsive
+    // el text area
     const handleInput = () => {
         const textarea = textareaRef.current;
         if (textarea) {
@@ -19,10 +22,15 @@ const Input = ({ inputNameContainer, inputName, placeholder, action}) => {
             const text = textareaRef.current.value;
             // Limpiar el texto de entrada
             textareaRef.current.value = "";
+            
+            // Esta función ejecuta funciones pasadas
+            // por otros componentes
             action(text);
         }
     };
 
+    // Función al momento de teclear enter verificar 
+    // que solo enter es pulsado
     const handleKeyDown = (e) => {
         if (e.key === 'Enter' && !e.shiftKey) {
             // Evita el salto de línea

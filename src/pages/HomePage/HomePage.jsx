@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 const HomePage = () => {
   const navigate = useNavigate();
   
+  // Gestionar estado de opciones
   useEffect(() => {
     handleStateOption();
   }, []);
@@ -26,6 +27,8 @@ const HomePage = () => {
 
   // Función para inicializar ResponsePage
   const handleResponsePage = (promt) => {
+    // Guardar en local el primer pront de
+    // la conversación
     localStorage.setItem('promt', promt);
     navigate('/response');
   }

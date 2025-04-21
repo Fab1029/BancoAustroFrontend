@@ -6,8 +6,11 @@ import ResponseCard from '../../components/ResponseCard/ResponseCard'
 import Input from '../../components/Input/Input'
 
 const ResponsePage = () => {
+  // Inicializar lista de chat 
   const [chat, setChat] = useState([]);
 
+  // Al momento del redireccionamiento renderizar
+  // el chat con el primer promt de la página principal
   useEffect(() => {
     const initialPrompt = localStorage.getItem('promt');
     if (initialPrompt) {
@@ -15,11 +18,11 @@ const ResponsePage = () => {
     }
   }, []);
 
+  // Función para agregar promts y respuestas al chat
   const addToChat = (promt) => {
     setChat(prev => [
       ...prev,
-      { type: 'prompt', text: promt },
-      { type: 'response', text: promt } 
+      promt
     ]);
   };
 
@@ -30,12 +33,10 @@ const ResponsePage = () => {
       </header>
       <main className='main-response-page'>
           <ul className='responses-container'>
-            {chat.map((item, index) => (
-              <li key={index} className={item.type === 'prompt' ? 'promt-container' : 'response-container'}>
-                {item.type === 'prompt'
-                  ? <PromtCard promt={item.text} />
-                  : <ResponseCard response={item.text} />
-                }
+            {chat.map((promt, index) => (
+              <li key={index} className='chat-line'>
+                <div className='promt-container'> <PromtCard promt={promt} /> </div>
+                <div className='response-container'> <ResponseCard promt={promt} /> </div>
               </li>
             ))}
           </ul>

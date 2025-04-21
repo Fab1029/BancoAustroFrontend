@@ -1,31 +1,55 @@
 .response-card-container {
-    width: 1000px;
+    width: 75%;
     display: flex;
     flex-direction: column;
     animation: appear 0.5s ease-in-out;
 }
 
 .response-card {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .img-banco-austro {
-    width: 80px;
+    width: 4.5%;
 }
 
 .response-text {
+    width: 70%;
     padding: 2%;
-    width: 900px;
+    font-size: medium;
     border-radius: 20px;
     background-color: white;
     border: 2px solid #8C94BC;
     border-left: 5px solid #ec1639;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.feedback-open-container {
+    display: flex;
+}
+
+.feedback-tool-tip {
+    bottom: 1%;
+    opacity: 0;
+    padding: 0.5%;
+    color: white;
+    font-size: small;
+    border-radius: 3px;
+    transition: opacity 0.5s ease-in-out;
+    background-color: rgba(66, 66, 66, 0.5);
+}
+
+.feedback-open-container:hover  .feedback-tool-tip {
+    opacity: 1;
 }
 
 .svg-feedback-open {
-    width: 50px;
+    width: 20%;
     cursor: pointer;
 }
 
@@ -38,20 +62,20 @@
 }
 
 .feedback-card {
-    display: none;
-    margin: 2% 8%;   
+    display: none; 
 }
 
 .feedback-card.show {
-    display: flex;
-    flex-direction: column;
+    margin-top: 2%;
+    margin-left: 12%;
+    display: inline-block;
 }
 
 .input-container-feedback {
-    width: 100%;
+    width: 85%;
     max-height: 200px;
     position: relative;
-    border-radius: 50px;
+    border-radius: 25px;
     padding: 3% 3% 2.5rem 3%;
     background-color: white;
     border: 2px solid #8C94BC;
@@ -63,7 +87,7 @@
     border: none;
     resize: none;
     max-height: 100px;
-    font-size: x-large; 
+    font-size: medium; 
 }
 
 .header-feedback-card {
@@ -74,7 +98,7 @@
 }
 
 .svg-feedback-close {
-    width: 35px;
+    width: 3%;
     cursor: pointer;
     transition: fill 0.3s ease-in-out;
 }
@@ -112,3 +136,59 @@
 .loading-item:nth-child(3) {
     animation-delay: 1s;
 }
+
+@media (max-width:600px) {
+    .response-card-container {
+        width: 90%;
+    }
+    .img-banco-austro {
+        width: 10%;
+    }
+    .response-text {
+        width: 80%;
+    }
+    .svg-feedback-open {
+        width: 8%;
+    }
+    .feedback-card.show {
+        margin-left: 5%;
+    }
+    .svg-feedback-close {
+        width: 5%;
+    }
+    .input-container-feedback {
+        width: 90%;
+        padding: 3% 4% 2.5rem 4%;
+    }
+    .loading-item {
+        padding: 5px;
+    }
+}
+
+@media (min-width:601px) and (max-width:1024px) {
+    .response-card-container {
+        width: 80%;
+    }
+    .img-banco-austro {
+        width: 8%;
+    }
+    .response-text {
+        width: 80%;
+    }
+    .svg-feedback-open {
+        width: 6%;
+    }
+    .feedback-card.show {
+        margin-left: 5%;
+    }
+    .svg-feedback-close {
+        width: 4%;
+    }
+    .input-container-feedback {
+        width: 90%;
+        padding: 3% 4% 2.5rem 4%;
+    }
+    .loading-item {
+        padding: 6px;
+    }
+} 

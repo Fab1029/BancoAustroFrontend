@@ -1,5 +1,5 @@
 .side-bar-container {
-    width: 300px;
+    width: 15%;
     position: relative;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .side-bar-icons-container {
-    gap: 8%;
+    gap: 30px;
     display: flex;
     position: relative;
     align-items: center;
@@ -31,28 +31,24 @@
     background-color: rgba(66, 66, 66, 0.5);
 }
 
-.side-bar-icons-container li:hover {
-    .tool-tip {
-        opacity: 1;
-    }
+.side-bar-icons-container li:hover  .tool-tip {
+    opacity: 1;
 }
 
-
-
 .side-bar-buttons-container {
-    gap: 30px;
+    gap: 20px;
     display: flex;
     flex-direction: column;
 }
 
 .svg-menu {
-    width: 50px;
+    width: 35px;
     cursor: pointer;
     animation: appear 0.5s ease-in-out;
 }
 
 .svg-new-chat {
-    width: 55px;
+    width: 40px;
     cursor: pointer;
     animation: appear 0.5s ease-in-out;
 }
@@ -88,7 +84,7 @@
     padding: 6% 5%;
     color: black;
     cursor: pointer;
-    font-size: x-large;
+    font-size: medium;
     border-radius: 25px;
     background-color: white;
     transition: background-color 0.4s ease-in-out, color 0.3s ease-in-out;
@@ -97,4 +93,46 @@
 .button.active {
     color: white;
     background-color: #091B69;
+}
+
+@media (max-width:600px) {
+    .side-bar-container {
+        width: 100vw;
+    }
+    .slide-container {
+        left: 0%;
+        top: -400%;
+        height: 200px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition: top 0.3s ease-in-out;
+    }
+    .slide-container.show {
+        top: 0%;
+    }
+    .button {
+        width: 30%;
+        padding: 2%;
+    }
+}
+
+@media (min-width:601px) and (max-width:1024px) {
+    .side-bar-container {
+        width: 100vw;
+    }
+    .slide-container {
+        left: 0%;
+        top: -400%;
+        height: 280px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        transition: top 0.3s ease-in-out;
+    }
+    .slide-container.show {
+        top: 0%;
+    }
+    .button {
+        width: 30%;
+        padding: 2%;
+    }
 }
