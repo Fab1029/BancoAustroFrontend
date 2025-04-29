@@ -14,7 +14,7 @@ const ResponseCard = ({promt}) => {
     const [feedBackSumitVisible, setFeedBackSumitVisible] = useState(false);
 
     useEffect(() => {
-        /*
+        
         // Llamar la backend en esta sección
         const fetchEmbedding = async() => {
             const data = await getEmbedding(response);
@@ -27,12 +27,13 @@ const ResponseCard = ({promt}) => {
         };
         
         // Opción seleccionada llamar a servicio correspondiente
-        /*Number(localStorage.getItem('option')) === 0 ? fetchLLMResponse() : fetchEmbedding();*/
+        Number(localStorage.getItem('option')) === 0 ? fetchLLMResponse() : fetchEmbedding();
+        /*
         const timer = async() => {
             await new Promise(resolve => setTimeout(resolve, 3000));
             setResponse(promt);
         }
-        timer();
+        timer();*/
     }, []);
 
     const handleFeedBackVisible = () => {
@@ -45,29 +46,28 @@ const ResponseCard = ({promt}) => {
 
     // Función necesaria para guardar el feedback en la API
     const handlePostFeedBack = async(feedback) => {
-        const data = false;
         // Oculta el feedback-card
         handleFeedBackVisible();
     
         // Muestra el feedback-submit-container
         handleFeedBackSubmitVisible();
 
-        /*
+        
         const  data = Number(localStorage.getItem('option')) === 0
             ? await postLLMResponse(feedback)
             : await postEmbedding(feedback);
         
         // Se asigna el estado de feedBackSumit
-        data ? setFeedBackSumit(true) : setFeedBackSumit(false);*/
+        data ? setResponseSumit(true) : setResponseSumit(false);
         
+        /*
         //Se muestra la respuesta de sumit 
         data ? setResponseSumit(true) : setResponseSumit(false);
         // Espera 2 segundos y luego oculta el feedback-submit-container
         setTimeout(() => {
             setFeedBackSumitVisible(false);
-        }, 2000);
+        }, 2000);*/
 
-        
     };
 
     return (
