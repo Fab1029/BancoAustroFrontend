@@ -6,8 +6,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/embedding': 'http://10.16.190.99:8000',
-      '/llm_response': 'http://10.16.190.99:8000',
+      '/embedding': {
+        target: 'http://10.16.190.99:8000',
+        changeOrigin: true
+      },
+      '/llm_response': {
+        target: 'http://10.16.190.99:8000',
+        changeOrigin: true
+      }
     },
   },
 })
