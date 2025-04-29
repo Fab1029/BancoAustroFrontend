@@ -6,7 +6,7 @@ export const getEmbedding = async(promt) => {
         if (!response.ok) {
             throw new Error('Could not load embedding');
         }
-
+        console.log('Realizo1')
         return await response.json();
     }
     catch(error) {

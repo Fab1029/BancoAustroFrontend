@@ -17,17 +17,20 @@ const ResponseCard = ({promt}) => {
         
         // Llamar la backend en esta sección
         const fetchEmbedding = async() => {
+            console.log('Realizo el proceso1');
             const data = await getEmbedding(promt);
             setResponse(data);
         };
 
         const fetchLLMResponse = async() => {
+            console.log('Realizo el proceso2');
             const data = await getLLMResponse(promt);
             setResponse(data);
         };
         
         // Opción seleccionada llamar a servicio correspondiente
         Number(localStorage.getItem('option')) === 0 ? fetchLLMResponse() : fetchEmbedding();
+        console.log('Cargo completamente');
         /*
         const timer = async() => {
             await new Promise(resolve => setTimeout(resolve, 3000));
