@@ -1,4 +1,4 @@
-const API_URL = "10.16.190.99:8000";
+const API_URL = "http://10.16.190.99:8000";
 
 export const getEmbedding = async(promt) => {
     try {
