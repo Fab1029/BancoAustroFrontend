@@ -40,7 +40,7 @@ const HomePage = () => {
         </header>
         <main className='main-home-page'>
             <img className='banner-banco-austro' alt='LOGO BANCO AUSTRO' src='/banco-austro-logo1.png'/>
-            <Input inputNameContainer={'input-container'} inputName={'input'} placeholder={'¿En qué te puedo ayudar?'} action={handleResponsePage}/>
+            <Input inputNameContainer={'input-container'} inputName={'input'} placeholder={'¿En qué te puedo ayudar?'} onSumit={handleResponsePage}/>
         </main>
         <footer>
             

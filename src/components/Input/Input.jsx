@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import './Input.css';
 
-const Input = ({ inputNameContainer, inputName, placeholder, action}) => {
+const Input = ({ inputNameContainer, inputName, placeholder, onSumit}) => {
     // Referencia al text area
     const textareaRef = useRef(null);
     
@@ -25,7 +25,7 @@ const Input = ({ inputNameContainer, inputName, placeholder, action}) => {
             
             // Esta función ejecuta funciones pasadas
             // por otros componentes
-            action(text);
+            onSumit(text);
         }
     };
 

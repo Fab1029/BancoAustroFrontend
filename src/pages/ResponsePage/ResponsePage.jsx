@@ -42,7 +42,7 @@ const ResponsePage = () => {
           </ul>
       </main>
       <footer className='footer-response-page'>
-        <Input inputNameContainer={'input-container-response'} inputName={'input-response'} placeholder={'¿En qué te puedo ayudar?'} action={addToChat}/>
+        <Input inputNameContainer={'input-container-response'} inputName={'input-response'} placeholder={'¿En qué te puedo ayudar?'} onSumit={addToChat}/>
       </footer>
     </>
   )
