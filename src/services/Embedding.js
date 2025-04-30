@@ -1,8 +1,8 @@
-const API_URL = "/embedding";
+const EMBEDDING_URL = "/embedding";
 
 export const getEmbedding = async(promt) => {
     try {
-        const response = await fetch(`${API_URL}/?query=${encodeURIComponent(promt)}`);
+        const response = await fetch(`${EMBEDDING_URL}/?query=${encodeURIComponent(promt)}`);
         if (!response.ok) {
             throw new Error('Could not load embedding');
         }
@@ -16,7 +16,7 @@ export const getEmbedding = async(promt) => {
 
 export const postEmbedding = async(embedding) => {
     try {
-        const response = await fetch(`${API_URL}/`, {
+        const response = await fetch(`${EMBEDDING_URL}/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

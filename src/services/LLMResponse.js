@@ -1,8 +1,8 @@
-const API_URL = "/llm_response";
+const LLM_RESPONSE_URL = "/llm_response";
 
 export const getLLMResponse = async(promt) => {
     try {
-        const response = await fetch(`${API_URL}/?query=${encodeURIComponent(promt)}`);
+        const response = await fetch(`${LLM_RESPONSE_URL}/?query=${encodeURIComponent(promt)}`);
         if (!response.ok) {
             throw new Error('Could not load llm response');
         }
@@ -16,7 +16,7 @@ export const getLLMResponse = async(promt) => {
 
 export const postLLMResponse = async(llm_response) => {
     try {
-        const response = await fetch(`${API_URL}/`, {
+        const response = await fetch(`${LLM_RESPONSE_URL}/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
