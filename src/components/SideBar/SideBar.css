@@ -1,5 +1,6 @@
 .side-bar-container {
     width: 15%;
+    z-index: 1;
     position: relative;
 }
 
