@@ -5,8 +5,7 @@ const Input = ({ inputNameContainer, inputName, placeholder, onSumit}) => {
     // Referencia al text area
     const textareaRef = useRef(null);
     
-    // Función necesaria para poder hacer responsive
-    // el text area
+    // Función necesaria para poder hacer responsive el text area
     const handleInput = () => {
         const textarea = textareaRef.current;
         if (textarea) {

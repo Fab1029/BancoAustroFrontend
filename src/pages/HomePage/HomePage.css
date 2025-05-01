@@ -14,10 +14,10 @@
 
 .input-container {
     width: 68%;
-    max-height: 400px;
+    max-height: 200px;
     position: relative;
-    border-radius: 50px;
-    padding: 2% 1% 3.5rem 1%;
+    border-radius: 45px;
+    padding: 1% 1% 2.5rem 1%;
     background-color: white;
     border: 3px solid #8C94BC;
     animation: appear 0.5s ease-in-out;
@@ -27,7 +27,7 @@
     width: 100%;
     border: none;
     resize: none;
-    max-height: 300px;
+    max-height: 100px;
     font-size: medium; 
 }
 
@@ -41,7 +41,7 @@
     }
     .input-container {
         width: 90%;
-        padding: 3% 3% 3.5rem 3%;
+        padding: 3% 3% 2.5rem 3%;
     }
 }
 
@@ -54,7 +54,7 @@
     }
     .input-container {
         width: 90%;
-        padding: 3% 2% 3.5rem 2%;
+        padding: 2% 2% 2.5rem 2%;
     }
     
 }

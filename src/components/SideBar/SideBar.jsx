@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './SideBar.css'
 import { useLocation, useNavigate } from 'react-router-dom';
 
@@ -8,10 +8,29 @@ const SideBar = () => {
   const location = useLocation();
   // Opciones disponibles del modelo
   const options = ['Response', 'Embedding'];
+  // Referencias de menu
+  const menuRef = useRef(null);
 
   // Referencias useState
   const [menu, setMenu] = useState(false);
   const [option, setOption] = useState(Number(localStorage.getItem('option')));
+
+  useEffect(() => {
+    // Verifica si el menu esta activo ademas si se tiene referencia al slide bar
+    const handleClickOutside = (event) => {
+      if (menu && menuRef.current && ! menuRef.current.contains(event.target))
+        setMenu(false);
+    };
+    
+    // Agregar evento cuando se realiza un click
+    document.addEventListener('mousedown', handleClickOutside);
+
+    // Al momento de que no cambia el parametro menu se quita el evento
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+
+  }, [menu])
 
   // Función para determinar estado de menu
   // desplegable
@@ -48,7 +67,7 @@ const SideBar = () => {
           </li>
         </ul>
 
-        <div className={`slide-container ${menu ? 'show': ''}`}>
+        <div ref={menuRef} className={`slide-container ${menu ? 'show': ''}`}>
           
           <ul className='side-bar-icons-container'>
             <li onClick={handleMenu}>

@@ -6,7 +6,7 @@
 
 .slide-container, .side-bar-icons-container {
     width: 100%;
-    padding: 2%;
+    padding: 0.5%;
 }
 
 .side-bar-icons-container, .side-bar-buttons-container {
@@ -103,7 +103,7 @@
     .slide-container {
         left: 0%;
         top: -400%;
-        height: 200px;
+        height: 180px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         transition: top 0.3s ease-in-out;
@@ -123,8 +123,8 @@
     }
     .slide-container {
         left: 0%;
-        top: -400%;
-        height: 280px;
+        top: -600%;
+        height: 200px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         transition: top 0.3s ease-in-out;

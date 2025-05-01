@@ -12,5 +12,6 @@
 }
 
 .general-input {
+    height: auto;
     scrollbar-width: auto;
 }
