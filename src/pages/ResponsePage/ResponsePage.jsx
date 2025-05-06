@@ -29,17 +29,17 @@ const ResponsePage = () => {
   return (
     <>
       <header className='header-response-page'>
-            <SideBar/>
+        <SideBar/>
       </header>
       <main className='main-response-page'>
-          <ul className='responses-container'>
-            {chat.map((promt, index) => (
-              <li key={index} className='chat-line'>
-                <div className='promt-container'> <PromtCard promt={promt} /> </div>
-                <div className='response-container'> <ResponseCard promt={promt} /> </div>
-              </li>
-            ))}
-          </ul>
+        <ul className='responses-container'>
+          {chat.map((promt, index) => (
+            <li key={index} className='chat-line'>
+              <div className='promt-container'> <PromtCard promt={promt} /> </div>
+              <div className='response-container'> <ResponseCard promt={promt} /> </div>
+            </li>
+          ))}
+        </ul>
       </main>
       <footer className='footer-response-page'>
         <Input inputNameContainer={'input-container-response'} inputName={'input-response'} placeholder={'¿En qué te puedo ayudar?'} onSumit={addToChat}/>

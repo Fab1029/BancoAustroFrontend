@@ -13,6 +13,10 @@ export default defineConfig({
       '/llm_response': {
         target: 'http://10.16.190.99:8000',
         changeOrigin: true
+      },
+      '/chat_response': {
+        target: 'http://10.16.190.99:8000',
+        changeOrigin: true
       }
     },
   },

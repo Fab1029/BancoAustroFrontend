@@ -7,7 +7,7 @@ const SideBar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   // Opciones disponibles del modelo
-  const options = ['Response', 'Embedding'];
+  const options = ['Chat', 'Response', 'Embedding'];
   // Referencias de menu
   const menuRef = useRef(null);
 
