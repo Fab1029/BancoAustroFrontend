@@ -6,7 +6,7 @@ import { getEmbedding, postEmbedding } from '../../services/Embedding.js'
 import { getLLMResponse, postLLMResponse } from '../../services/LLMResponse.js'
 
 
-const ResponseCard = ({promt}) => {
+const ResponseCard = ({promt, context}) => {
     // Estados para manejar el feedback card
     // y cargar la respuesta del modelo
     const [response, setResponse] = useState(false);
@@ -15,7 +15,6 @@ const ResponseCard = ({promt}) => {
     const [feedBackSumitVisible, setFeedBackSumitVisible] = useState(false);
 
     useEffect(() => {
-        
         // Llamar la backend en esta sección
         const fetchEmbedding = async() => {
             const data = await getEmbedding(promt);
@@ -28,7 +27,10 @@ const ResponseCard = ({promt}) => {
         };
         
         const fetchChatResponse = async() => {
-            const data = await getChatResponse(promt);
+            //  Establecer el objeto
+            const chatResponse = {consulta: promt, respuesta: '', contexto: context};
+            
+            const data = await getChatResponse(chatResponse);
             setResponse(data);
         };
 
@@ -44,6 +46,9 @@ const ResponseCard = ({promt}) => {
                 fetchEmbedding();
                 break;
         } 
+
+        // LLamar a la funcion parametro
+        context('assistant', response.respuesta);
 
     }, []);
 

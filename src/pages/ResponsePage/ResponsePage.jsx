@@ -7,25 +7,25 @@ import Input from '../../components/Input/Input'
 
 const ResponsePage = () => {
   // Inicializar lista de chat 
-  const [chat, setChat] = useState([]);
+  const [chatContext, setChatContext] = useState([]);
+  const initialPrompt = localStorage.getItem('promt');
 
-  // Al momento del redireccionamiento renderizar
-  // el chat con el primer promt de la página principal
+  //Inicializar 
+  const [promt, setPromt] = useState(initialPrompt);
+
   useEffect(() => {
-    const initialPrompt = localStorage.getItem('promt');
-    if (initialPrompt) {
-      addToChat(initialPrompt);
-    }
-  }, []);
+    addToChat('user', promt);
+  }, [promt]);
 
   // Función para agregar promts y respuestas al chat
-  const addToChat = (promt) => {
-    setChat(prev => [
+  const addToChat = (role, content) => {
+    setChatContext(prev => [
       ...prev,
-      promt
+      {role: role, content: content}
     ]);
   };
-
+  
+  
   return (
     <>
       <header className='header-response-page'>
@@ -33,16 +33,16 @@ const ResponsePage = () => {
       </header>
       <main className='main-response-page'>
         <ul className='responses-container'>
-          {chat.map((promt, index) => (
+          {chatContext.filter(chat => chat.role === 'user').map((chat, index) => (
             <li key={index} className='chat-line'>
-              <div className='promt-container'> <PromtCard promt={promt} /> </div>
-              <div className='response-container'> <ResponseCard promt={promt} /> </div>
+              <div className='promt-container'> <PromtCard promt={chat.content} /> </div>
+              <div className='response-container'> <ResponseCard promt={chat.content} context={addToChat} /> </div>
             </li>
           ))}
         </ul>
       </main>
       <footer className='footer-response-page'>
-        <Input inputNameContainer={'input-container-response'} inputName={'input-response'} placeholder={'¿En qué te puedo ayudar?'} onSumit={addToChat}/>
+        <Input inputNameContainer={'input-container-response'} inputName={'input-response'} placeholder={'¿En qué te puedo ayudar?'} onSumit={setPromt}/>
       </footer>
     </>
   )

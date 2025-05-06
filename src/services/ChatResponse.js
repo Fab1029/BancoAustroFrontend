@@ -2,10 +2,6 @@ const CHAT_RESPONSE_URL = "/chat_response";
 
 export const getChatResponse = async(chat) => {
     try {
-        // Determinar la estructura del objeto
-        if (chat.respuesta) chat.respuesta = "";
-        else if (chat.contexto) chat.contexto = [];
-
         const response = await fetch(`${CHAT_RESPONSE_URL}/`, {
             method: 'POST',
             headers: {

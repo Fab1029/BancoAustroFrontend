@@ -10,26 +10,24 @@ const HomePage = () => {
   
   // Gestionar estado de opciones
   useEffect(() => {
+    
+    const handleStateOption = () => {
+      try {
+        localStorage.getItem('option');
+      }
+      catch {
+        // Inicializar con el valor de 0
+        localStorage.setItem('option', 0);
+      }
+    };
+
     handleStateOption();
   }, []);
   
-  // Inicializar variable option para manejar que tipo de response deseamos
-  // El valor 0 corresponde a response del LLM
-  // El valor 1 corresponde a response embedding
-  const handleStateOption = () => {
-    try {
-      localStorage.getItem('option');
-    }
-    catch {
-      localStorage.setItem('option', 0);
-    } 
-  };
-
   // Función para inicializar ResponsePage
   const handleResponsePage = (promt) => {
-    // Guardar en local el primer pront de
+    // Guardar en local el primer promt de
     // la conversación
-    localStorage.setItem('promt', promt);
     navigate('/response');
   }
   

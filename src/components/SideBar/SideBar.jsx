@@ -43,6 +43,7 @@ const SideBar = () => {
     if(index !== option) {
       if (location.pathname === '/response') navigate('/');
       // Actualizar estado global
+      console.log('Estes es el indice', index)
       setOption(index)
       localStorage.setItem('option', index);
     }
