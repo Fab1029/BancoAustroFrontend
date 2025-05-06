@@ -21,6 +21,17 @@ const HomePage = () => {
       }
     };
 
+    const handleStatePromt = () => {
+      try {
+        localStorage.getItem('promt');
+      }
+      catch {
+        // Inicializar con el valor de 0
+        localStorage.clear('promt');
+      }
+    };
+
+    handleStatePromt();
     handleStateOption();
   }, []);
   
@@ -28,6 +39,7 @@ const HomePage = () => {
   const handleResponsePage = (promt) => {
     // Guardar en local el primer promt de
     // la conversación
+    localStorage.setItem('promt', promt);
     navigate('/response');
   }
   
