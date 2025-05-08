@@ -30,13 +30,13 @@ const ResponsePage = () => {
     ]);
 
     //Una vez obtenido la respuesta se actualiza el contexto
-    handleChatContext();
-  };
-
-  const handleChatContext = () => {
-    setChatContext(prev => [
-      ...prev, userMessage.at(-1), responseMessage.at(-1)
-    ]);
+    setChatContext(
+      prev => [
+        ...prev,
+        userMessage.at(-1),
+        {role: 'assistant', content: message}
+      ]
+    );  
   };
 
   return (
