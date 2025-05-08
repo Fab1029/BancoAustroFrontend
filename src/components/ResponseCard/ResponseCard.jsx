@@ -17,7 +17,6 @@ const ResponseCard = ({promt, context, onSumit}) => {
     useEffect(() => {
         const fetchResponse = async () => {
             let data;
-    
             const option = Number(sessionStorage.getItem('option'));
             switch (option) {
                 case 0:
@@ -34,11 +33,10 @@ const ResponseCard = ({promt, context, onSumit}) => {
             // Establecer respuesta en el estado
             if (data) {
                 setResponse(data);
-                onSumit('user', promt);
                 onSumit('assistant', data.respuesta);
             }
         };
-    
+        
         fetchResponse();
     }, []);
 
