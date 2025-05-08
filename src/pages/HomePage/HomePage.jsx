@@ -12,23 +12,14 @@ const HomePage = () => {
   useEffect(() => {
     
     const handleStateOption = () => {
-      try {
-        localStorage.getItem('option');
-      }
-      catch {
-        // Inicializar con el valor de 0
-        localStorage.setItem('option', 0);
+      if(!sessionStorage.getItem('option')) {
+        sessionStorage.setItem('option', 0);
       }
     };
 
     const handleStatePromt = () => {
-      try {
-        localStorage.getItem('promt');
-      }
-      catch {
-        // Inicializar con el valor de 0
-        localStorage.clear('promt');
-      }
+      if (sessionStorage.getItem('promt'))
+        sessionStorage.removeItem('promt');
     };
 
     handleStatePromt();
@@ -39,7 +30,7 @@ const HomePage = () => {
   const handleResponsePage = (promt) => {
     // Guardar en local el primer promt de
     // la conversación
-    localStorage.setItem('promt', promt);
+    sessionStorage.setItem('promt', promt);
     navigate('/response');
   }
   

@@ -13,7 +13,7 @@ const SideBar = () => {
 
   // Referencias useState
   const [menu, setMenu] = useState(false);
-  const [option, setOption] = useState(Number(localStorage.getItem('option')));
+  const [option, setOption] = useState(Number(sessionStorage.getItem('option')));
 
   useEffect(() => {
     // Verifica si el menu esta activo ademas si se tiene referencia al slide bar
@@ -41,11 +41,11 @@ const SideBar = () => {
   const handleOption = (index) => {
     // Determinar el cambio de estado en opciones
     if(index !== option) {
-      if (location.pathname === '/response') navigate('/');
+      if (location.pathname === '/response') 
+        navigate('/');
       // Actualizar estado global
-      console.log('Estes es el indice', index)
       setOption(index)
-      localStorage.setItem('option', index);
+      sessionStorage.setItem('option', index);
     }
   };
   

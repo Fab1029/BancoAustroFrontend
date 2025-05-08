@@ -7,15 +7,16 @@ import Input from '../../components/Input/Input'
 
 const ResponsePage = () => {
   // Inicializar lista de chat 
+  const [promt, setPromt] = useState();
   const [chatContext, setChatContext] = useState([]);
-  const initialPrompt = localStorage.getItem('promt');
-
-  //Inicializar 
-  const [promt, setPromt] = useState(initialPrompt);
-
+  
   useEffect(() => {
-    addToChat('user', promt);
-  }, [promt]);
+    const storedPromt = sessionStorage.getItem('promt');
+    if (storedPromt) {
+      setPromt(storedPromt);
+      setChatContext([{ role: 'user', content: storedPromt }]);
+    }
+  }, []);
 
   // Función para agregar promts y respuestas al chat
   const addToChat = (role, content) => {
@@ -24,7 +25,6 @@ const ResponsePage = () => {
       {role: role, content: content}
     ]);
   };
-  
   
   return (
     <>
@@ -36,7 +36,7 @@ const ResponsePage = () => {
           {chatContext.filter(chat => chat.role === 'user').map((chat, index) => (
             <li key={index} className='chat-line'>
               <div className='promt-container'> <PromtCard promt={chat.content} /> </div>
-              <div className='response-container'> <ResponseCard promt={chat.content} context={addToChat} /> </div>
+              <div className='response-container'> <ResponseCard promt={chat.content} context={chatContext} onSumit={addToChat}/> </div>
             </li>
           ))}
         </ul>
