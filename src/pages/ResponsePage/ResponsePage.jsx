@@ -34,13 +34,8 @@ const ResponsePage = () => {
   };
 
   const handleChatContext = () => {
-    let context = [
-      userMessage[userMessage.length], 
-      responseMessage[responseMessage.length]
-    ];
-
     setChatContext(prev => [
-      prev, context
+      ...prev, userMessage.at(-1), responseMessage.at(-1)
     ]);
   };
 

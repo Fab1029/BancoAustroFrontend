@@ -33,7 +33,7 @@ const ResponseCard = ({promt, context, onSumit}) => {
             // Establecer respuesta en el estado
             if (data) {
                 setResponse(data);
-                onSumit('assistant', data.respuesta);
+                onSumit(data.respuesta);
             }
         };
         
