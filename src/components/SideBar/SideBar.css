@@ -103,7 +103,7 @@
     .slide-container {
         left: 0%;
         top: -400%;
-        height: 180px;
+        height: fit-content;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         transition: top 0.3s ease-in-out;
@@ -124,7 +124,7 @@
     .slide-container {
         left: 0%;
         top: -600%;
-        height: 200px;
+        height: fit-content;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
         transition: top 0.3s ease-in-out;
