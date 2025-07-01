@@ -1,12 +1,46 @@
-# React + Vite
+# Banco Austro – Frontend LLM Analytics
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es la interfaz web desarrollada para el **Banco del Austro**, cuyo propósito es ofrecer una plataforma amigable que permita a los usuarios del área de **analítica y análisis de datos** interactuar con un **modelo de lenguaje (LLM)** y consultar datos de forma inteligente.
 
-Currently, two official plugins are available:
+Este frontend está desarrollado con **React + Vite** usando **JavaScript** y se conecta a un backend que expone capacidades de lenguaje natural para consultar y analizar información estratégica del banco.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Tecnologías utilizadas
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
+- [react-router-dom](https://reactrouter.com/) – para gestión de rutas
+
+---
+
+## 📁 Estructura general
+
+BancoAustroFrontend/
+├── public/ # Archivos estáticos
+├── src/
+│ ├── components/ # Componentes reutilizables
+│ ├── pages/ # Vistas principales (Home, Dashboard, etc.)
+│ ├── routes/ # Definición de rutas
+│ ├── App.jsx # Componente principal
+│ ├── main.jsx # Punto de entrada de React
+├── index.html
+├── package.json
+└── vite.config.js
+
+---
+
+## ⚙️ Instalación y ejecución local
+
+1. **Clona el repositorio:**
+
+```bash
+git clone https://github.com/Fab1029/BancoAustroFrontend.git
+cd BancoAustroFrontend
+```
+## Instalar dependencias
+```bash
+npm install
+npm run dev
+```
