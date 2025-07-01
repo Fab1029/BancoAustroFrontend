@@ -17,17 +17,19 @@ Este frontend está desarrollado con **React + Vite** usando **JavaScript** y se
 
 ## 📁 Estructura general
 
--BancoAustroFrontend/
--├── public/ # Archivos estáticos
--├── src/
--│ ├── components/ # Componentes reutilizables
--│ ├── pages/ # Vistas principales (Home, Dashboard, etc.)
--│ ├── routes/ # Definición de rutas
--│ ├── App.jsx # Componente principal
--│ ├── main.jsx # Punto de entrada de React
--├── index.html
--├── package.json
--└── vite.config.js
+```plaintext
+BancoAustroFrontend/
+├── public/ # Archivos estáticos
+├── src/
+│ ├── components/ # Componentes reutilizables
+│ ├── pages/ # Vistas principales (Home, Dashboard, etc.)
+│ ├── routes/ # Definición de rutas
+│ ├── App.jsx # Componente principal
+│ ├── main.jsx # Punto de entrada de React
+├── index.html
+├── package.json
+└── vite.config.js
+```
 
 ---
 
